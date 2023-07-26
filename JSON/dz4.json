@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Cloe",
+        "nickname": "'Angel'",
+        "age": 17,
+        "photo": "https://i.pinimg.com/564x/97/ab/b0/97abb06565343360dd94b21ae84c4573.jpg",
+        "birthday": "May 23rd"
+    },
+    {
+        "name": "Yasmin",
+        "nickname": "'Pretty Princess'",
+        "age": 16,
+        "photo": "https://i.pinimg.com/236x/91/b4/ab/91b4ab149c09dddb94d9175413c67819.jpg",
+        "birthday": "July 24th"
+    },
+    {
+        "name": "Jade",
+        "nickname": "'Kool Kat'",
+        "age": 17,
+        "photo": "https://i.pinimg.com/236x/3e/cd/e7/3ecde744fd91d4c9209a2b4ff3588419.jpg",
+        "birthday": "November 4th"
+    },
+    {
+        "name": "Sasha",
+        "nickname": "'Bunny Boo'",
+        "age": 16,
+        "photo": "https://i.pinimg.com/236x/30/6d/8a/306d8ab110703c896883fc2882358d1a.jpg",
+        "birthday": "August 3rd"
+    }
+]
