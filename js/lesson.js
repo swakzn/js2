@@ -101,3 +101,98 @@ const convert = (e) => {
 convert(som);
 convert(euro);
 convert(usd);
+
+//card switcher
+
+const card = document.querySelector('.card')
+const btnNext = document.querySelector('#btn-next')
+const btnPrev = document.querySelector('#btn-prev')
+let count = 1;
+
+
+const fetchCard = (count) => {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${count}`)
+        .then(response => response.json())
+        .then(data => {
+            card.innerHTML = `
+                <p>${data.title}</p>
+                <p style="color: ${data.completed ? 'green' : 'red'}">${data.completed}</p>
+                <span>${data.id}</span>
+            `;
+        });
+};
+
+btnNext.onclick = () => {
+    count++;
+    if (count > 200) {
+        count = 1;
+    }
+    fetchCard(count);
+};
+
+btnPrev.onclick = () => {
+    count--;
+    if (count === 0) {
+        count = 200;
+    }
+    fetchCard(count);
+};
+
+fetchCard(count);
+
+const cards = document.querySelector('.card1')
+let cardsCount
+
+// cards.onclick = () => {
+//     fetch('https://jsonplaceholder.typicode.com/posts')
+//         .then (response => response.json())
+//         .then(data =>{
+//             cards.innerHTML = `
+//           <p>${data.title}</p>
+//           <p>${data.body}</p>
+//           <span>${data.id}</span>
+//         `
+//         })
+// }
+
+const fetchCards = async () => {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const data = await response.json();
+        console.log('Posts data', data);
+    } catch (error) {
+        console.error('ERROR', error);
+    }
+};
+
+
+const cardsData = (data) => {
+    cards.innerHTML = `
+      <p>${data.title}</p>
+      <p>${data.body}</p>
+      <span>${data.id}</span>
+    `
+}
+
+
+fetchCards();
+
+const city = document.querySelector('.city')
+const temp = document.querySelector('.temp')
+const cityName = document.querySelector('.cityName')
+
+const apiKey = 'e417df62e04d3b1b111abeab19cea714'
+const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather'
+
+const citySearch = () => {
+    cityName.oninput = (event) => {
+        fetch(`${BASE_URL}?q=${event.target.value}&appid=${apiKey}`)
+            .then(response => response.json())
+            .then(data =>{
+                city.innerHTML = data?.name || 'Город не найден...'
+                temp.innerHTML = data?.main?.temp ? Math.round(data?.main?.temp - 273) + '&deg;C' : '...'
+            })
+    }
+}
+
+citySearch()

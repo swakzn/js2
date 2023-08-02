@@ -90,6 +90,11 @@
     color: #F79300;
     font-weight: 600;
 }
+.footer h4 {
+    text-transform: uppercase;
+    color: #F79300;
+    font-weight: 600;
+}
 
 
 /* SLIDER BLOCK */
@@ -224,4 +229,32 @@ body.modal-open {
 .modal_input, .btn_min {
     width: 100% !important;
     margin-top: 10px;
+}
+
+.cards {
+    background-color: black;
+    padding: 100px 0;
+}
+.inner_cards {
+    margin: 30px 0;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: space-between;
+}
+.inner_cards p {
+    color: #F79300;
+    width: 500px;
+    padding-top: 10px;
+}
+
+.inner_cards h4 {
+    width: 500px;
+    padding-top: 20px;
+}
+
+.inner_cards img {
+    justify-content: center;
 }
